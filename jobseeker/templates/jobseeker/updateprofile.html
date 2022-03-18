@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% include 'navigation.html' %}
+{% block content %}
+
+<h1>
+    Update Your profile 
+</h1>
+<form method="post">
+{% csrf_token %}
+{{form.as_p}}   
+<button type="submit">Submit</button>
+</form>
+{% endblock content %}

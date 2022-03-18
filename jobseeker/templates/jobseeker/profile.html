@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% include 'navigation.html' %}
+{% block content %}
+
+<h1>Profile page</h1>
+<p>Name:{{jobseeker.first_name}} {{jobseeker.last_name}}</p>
+<p>Age:{{jobseeker.age}}</p>
+<p> Gender :{{jobseeker.Gender}}</p>
+<p>Education details :{{jobseeker.education_details}}</p>
+<p>Address :{{jobseeker.permanent_address}}</p>
+<p>Mobile number :{{jobseeker.phone_number}}</p>
+<a href="{% url 'jobseeker:profile-update' jobseeker.pk %}">Update </a>
+<br>
+<a href="{% url 'jobseeker:profile-delete' jobseeker.pk %}">Delete </a>
+<br>
+{% endblock content %}

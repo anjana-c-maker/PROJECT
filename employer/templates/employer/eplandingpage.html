@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/employer.css' %}">
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+{% endblock link %}
+
+{% block content %}
+<div class="banner">
+{% include 'nav.html' %}
+</div>
+{% endblock content %}
