@@ -67,7 +67,7 @@ font-weight: 100;
 line-height: 25px;
 }
 button{
-    width: 200px;
+    width: 125px;
     padding: 15px 0;
     text-align: center;
     margin: 20px 10px;
@@ -120,3 +120,7 @@ button:hover{
 .dropdown-content a:hover {background-color: rgba(20, 19, 19, 0.459);}
   
 .dropdown:hover .dropdown-content {display: block;}
+
+.profilebutton{
+    border-radius: 4px;
+}

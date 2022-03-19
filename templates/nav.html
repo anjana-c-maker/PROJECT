@@ -10,8 +10,6 @@
     <ul>
         <li><a href="{% url 'accounts:homepage' %}">Home</a></li>
         {% if user.is_authenticated %}
-        <li><a href="#">My profile</a></li>
-        <li><a href="{% url 'accounts:logout' %}">logout</a></li> 
         {% if user.type == 'Jobseeker' %}
         <div class="dropdown">
             <li><a href="#">Jobseeker</a>
@@ -34,12 +32,16 @@
             </li>
         </div>  
         {% endif %} 
+        <li><a href="{% url 'accounts:logout' %}">logout</a></li> 
         {% else %}
         <li><a href="{% url 'accounts:register' %}">Register</a></li>
         <li><a href="{% url 'accounts:login' %}">Sign In</a></li>
         {% endif %}
         <li><a href="#">About us</a></li>
     </ul>
+    {% if user.is_authenticated %}
+        <li><button class="profilebutton">MY PROFILE</button></li>
+    {% endif %}
 </div>        
 {% endblock content %}
 
