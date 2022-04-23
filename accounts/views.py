@@ -1,5 +1,5 @@
 from multiprocessing import context
-from django.shortcuts import render, redirect
+from django.shortcuts import render,redirect
 from django.contrib.auth.forms import UserCreationForm
 from accounts.forms import CustomUserForm
 from django.contrib.auth.views import LoginView,LogoutView
@@ -24,7 +24,7 @@ def register(request) :
         if form.is_valid() :
             form.save()
             print('Successfully registered')
-            return redirect('login')
+            return redirect('accounts:login')
     context = {'form':form}
     return render(request,'registration/register.html',context)
 

@@ -19,6 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
+
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'accounts',
     'jobseeker',
     'employer',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -126,11 +128,22 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATICFILES_DIRS=(
-    BASE_DIR,"static"
-)
+STATICFILES_DIRS=[
+    BASE_DIR/"static",
+]
 STATIC_ROOT = "static_root"
 STATIC_URL ="/static/"
 
 AUTH_USER_MODEL='accounts.User'
 LOGOUT_REDIRECT_URL ='home'
+
+DATE_INPUT_FORMATS = ['%Y-%m-%d', '%m/%d/%Y',  '%m/%d/%y']     
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "teachit673007@gmail.com"
+EMAIL_HOST_PASSWORD = "PASSWORD"
+EMAIL_USE_TLS = True
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

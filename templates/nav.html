@@ -15,9 +15,10 @@
             <li><a href="#">Jobseeker</a>
                   <div class="dropdown-content">
                      <a href="{% url 'jobseeker:profile-create' %}">Create Profile</a>
-                     <a href="#">Create Job alert</a>
-                     <a href="#">Career tips</a>
-                     <a href="#">Resume builder</a>
+                     <a href="{% url 'jobseeker:blog-post-list' %}">Blog Section</a>
+                     <a href="{% url 'jobseeker:career' %}">Career tips</a>
+                     <a href="{% url 'jobseeker:resume-create' %}">Resume builder</a>
+                     <a href="{% url 'jobseeker:search' %}">Search Jobs</a>
                  </div>
              </li>
         </div>
@@ -25,8 +26,8 @@
         <div class="dropdown">
             <li><a href="#">For Employer</a>
                  <div class="dropdown-content">
-                    <a href="#">Create Profile</a>
-                    <a href="#">Post Job</a>
+                    <a href="{% url 'employer:profile-create' %}">Create Profile</a>
+                    <a href="{% url 'employer:build-job-post' %}">Post Job</a>
                     <a href="#">Search Profile</a>
                 </div>
             </li>
@@ -37,11 +38,9 @@
         <li><a href="{% url 'accounts:register' %}">Register</a></li>
         <li><a href="{% url 'accounts:login' %}">Sign In</a></li>
         {% endif %}
-        <li><a href="#">About us</a></li>
+        <li><a href="{% url 'jobseeker:about' %}">About us</a></li>
     </ul>
-    {% if user.is_authenticated %}
-        <li><button class="profilebutton">MY PROFILE</button></li>
-    {% endif %}
+
 </div>        
 {% endblock content %}
 

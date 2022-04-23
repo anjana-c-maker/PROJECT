@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% include 'navigation.html' %}
+{% block content %}
+<style>
+    *{
+        font-family: Proxima Nova;
+        text-align: left;
+        padding-left:4px;
+    }
+    h1{
+        font-size:40px;
+    }
+    h2{
+        font-size:25px;
+        color: green;
+        
+    }
+    p{
+        font-size:20px
+    }
+</style>
+<h1>
+   {{resume.name}}
+</h1>
+<p>
+    {{resume.address}}
+    <br>
+    {{resume.email}}
+    <br>
+    {{resume.phone}}
+   
+</p>  
+<br>
+<br>
+<p>
+{{resume.summary}}
+</p>
+<h2>SKILLSS</h2>
+<p>{{resume.skills}}</p>
+<br>
+<br>
+<h2>EXPERIENCE</h2>
+<p>{{resume.experience}}</p>
+<br>
+<br>
+<h2>EDUCATION</h2>
+<p>{{resume.education}}</p>
+<br>
+<br>
+<h2>ABOUT</h2>
+<p>{{resume.about}}</p>
+<br>
+<br>
+<h2>CERTIFICATIONS</h2>
+<p>{{resume.certifications}}</p>
+</h2>
+{% endblock content %}

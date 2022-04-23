@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/jobview.css' %}">
+{% endblock link %}
+
+{% block content %}
+<div class="container">
+    <h1>
+        {{job.job_title}}
+    </h1>
+    <h3>
+        {{job.location}} <br>
+        {{job.scale_of_pay}}
+    <h3> 
+     <button>Apply now</button>
+     <hr>
+    <div class="list">
+       <ul type="disc">
+            <li>Requirments :{{job.requirements }}</li>
+             <li>Qualification :{{job.qualification }}</li>
+             <li>Experience :{{job.experience  }}</li>
+             <li>Job type :{{job.jobtype }}</li>
+             <li>Working Time :{{job.woking_time}}</li>
+             <li>Schedule :{{job.schedule}}</li>
+             <li>Language :{{job.language}}</li>      
+             <li>Application deadline :{{job.application_deadline}}</li> 
+        </ul>
+    </div>            
+</div>
+
+{% endblock content %}

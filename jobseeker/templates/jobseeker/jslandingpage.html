@@ -8,6 +8,23 @@
 
  <div class="banner">
      {% include 'nav.html' %}
+     
+     <div class="content">
+     <h1>Find amazing teaching jobs<h1>
+         <h3><pre>
+             we make it easy to find the teaching jobs you need.As a teacher your impact goes beyond the classroom.
+
+             It inspires the future.Get ready to make difference.
+         </pre>
+        </h3>
+        {% if user.type == 'Jobseeker' %}
+     <button><a href="/jobseeker/{{profile.id}}/" class="profilebutton" style="list-style: none; text-decoration:none; font-weight:bold; color:#fff;"> <span></span> MY TEACHING PROFILE</a></button>
+     {% else %}
+     {{ user }}
+     {% endif %}
+         <button><a href="{% url 'employer:job-post-list' %}" style="text-decoration:none; color:#fff; font-size:14px;"> <span></span> LATEST VACANCIES <a></button>
+            
+     </div>
  </div>   
 {% endblock content %}
 
